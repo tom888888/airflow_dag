@@ -13,7 +13,7 @@ default_args = {
 }
 
 dag = DAG(
-    'verify_cluster',
+    'test_dag2',
     default_args=default_args,
     start_date=datetime(2020, 1, 1),
     schedule_interval=timedelta(days=1)
@@ -29,4 +29,9 @@ t2 = BashOperator(
     bash_command='echo 2',
     dag=dag)
 
-t1 >> t2
+t3 = BashOperator(
+    task_id='run_this_last',
+    bash_command='echo 3',
+    dag=dag)
+
+t1 >> t2 >>t3
