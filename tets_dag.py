@@ -30,7 +30,7 @@ t2 = BashOperator(
     dag=dag)
 
 t3 = BashOperator(
-    task_id='run_this_last',
+    task_id='run_this_finish',
     bash_command='echo 3',
     dag=dag)
 
