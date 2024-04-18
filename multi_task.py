@@ -25,12 +25,12 @@ with DAG(
     range_list=[1,2]
     with TaskGroup(group_id='multi_task') as multi_task:
     
-    multi_task_list = [
-        BashOperator(
-            task_id=f"multi_task_{num}",
-            bash_command=test_task.py,
-            dag=dag)
-    for num in range_list]
-    multi_task_list
+        multi_task_list = [
+            BashOperator(
+                task_id=f"multi_task_{num}",
+                bash_command=test_task.py,
+                dag=dag)
+        for num in range_list]
+        multi_task_list
 
     multi_task
