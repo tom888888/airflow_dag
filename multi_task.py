@@ -22,7 +22,7 @@ with DAG(
 ) as dag:
   
 
-    range_list=[1,2]
+    range_list=[i for i in range(15)]
     
     
     multi_task_list = [
